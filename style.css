@@ -15,17 +15,18 @@ body {
 
 
 .header {
-    position:fixed;
-    top:0;
-    left:0;
-    width:100% ;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     padding: 20px 10%;
-    background:transparent;
+    background: transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index:100;
+    z-index: 100;
 }
+
 
 .logo{
     position:relative;
@@ -62,7 +63,7 @@ body {
 } */
 
 .home {
-    height: 100vh;
+    height: 132vh;
     background: url("img/bg3.jpg ") no-repeat;
     background-size:cover;
     background-position:center;
@@ -218,16 +219,16 @@ body {
 }
 
 .home-sci {
-  position: absolute;
-    bottom: 40px;
+    margin: 11px;
     width: 170px;
     display:flex;
-    justify-content: space-between;   
+    justify-content: space-between;
+    padding-left: 20px;
+
 }
 
 .home-sci::before {
     content: "";
-    position:absolute;
     top:0;
     right:0;
     width: 100%;
@@ -282,7 +283,7 @@ body {
    position: absolute; 
    top: 0;
    right:30px;
-   width: 500px;
+   width: 400px;
    height: 100%;
    background: transparent;
    transition: 3s;
@@ -349,12 +350,7 @@ opacity: .8;
 }
 
 /*seznam*/
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
-    margin: 0;
-    padding: 0;
-}
+
 
 
 
@@ -386,3 +382,52 @@ li a {
     color: #333;
     font-weight: bold;
 }
+
+.empty-space {
+    margin-bottom: 100px;
+}
+
+
+footer {
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+
+// responzivní
+
+@media screen and (max-width:  585px) {
+    .home-sci {
+        bottom:  50px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 5%;
+    }
+}
+
+
+
+
+
+    /*@media (max-width:  1000px) {*/
+    /*    .home-sci {*/
+    /*        position: absolute;*/
+    /*        top: 0;*/
+    /*        right:30px;*/
+    /*        width: 400px; !* Šířka zůstane 400px *!*/
+    /*        height: 100%;*/
+    /*        background: transparent;*/
+    /*        transition: none; !* Zrušení přechodu *!*/
+    /*        animation: none; !* Zrušení animace *!*/
+    /*        pointer-events: none; !* Vypnutí pointer events *!        }*/
+    /*}*/
