@@ -1,5 +1,5 @@
 const projects = [
-  { name: "Hra Snake (JS)", link: "http://had.xdtisk.cz/", icon: "rocket" },
+  // { name: "Hra Snake (JS)", link: "http://had.xdtisk.cz/", icon: "rocket" },
   { name: "Osobní stránka- tomaspitro.cz", link: "index.html", icon: "book" },
  // { name: "Nový projekt", link: "https://ankh-sepia.vercel.app/", icon: "globe" },
 { name: "Starý Egypt (REACT)", link: "https://staryegypt.vercel.app/", icon: "eye" },
