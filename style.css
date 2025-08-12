@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Tommy Pietro - Mobilní menu</title>
+<title>Tommy Pietro - Header s hamburgerem</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
@@ -39,7 +39,11 @@
     font-weight: 600;
   }
 
-  /* Navbar desktop */
+  .navbar {
+    display: flex;
+    align-items: center;
+  }
+
   .navbar a {
     font-size: 18px;
     color: rgb(242, 255, 240);
@@ -54,7 +58,7 @@
     color: rgb(94, 255, 0);
   }
 
-  /* Hamburger styling */
+  /* Hamburger button - skrytý na desktopu */
   .hamburger {
     display: none;
     flex-direction: column;
@@ -71,7 +75,7 @@
     transition: 0.3s;
   }
 
-  /* Responsive menu */
+  /* Responzivní design pro menší obrazovky */
   @media (max-width: 768px) {
     .navbar {
       position: fixed;
@@ -80,14 +84,15 @@
       width: 100%;
       background-color: rgb(2, 32, 7);
       flex-direction: column;
-      display: none;
       padding: 20px 10%;
+      display: none; /* skryté defaultně */
       z-index: 99;
     }
 
     .navbar a {
       margin: 10px 0;
       font-size: 20px;
+      margin-left: 0;
     }
 
     .hamburger {
@@ -95,12 +100,12 @@
     }
   }
 
-  /* Show nav when active */
+  /* Aktivní stav menu - viditelné */
   .navbar.active {
     display: flex;
   }
 
-  /* Hamburger to X */
+  /* Hamburger animace na křížek */
   .hamburger.active div:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
   }
@@ -112,6 +117,10 @@
   .hamburger.active div:nth-child(3) {
     transform: rotate(-45deg) translate(6px, -6px);
   }
+
+  /* --- Zbytek tvých stylů můžeš přidat sem --- */
+  /* třeba tvůj .home, .btn-box, footer, atd. */
+
 </style>
 </head>
 <body>
