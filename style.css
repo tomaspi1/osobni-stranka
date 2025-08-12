@@ -102,7 +102,7 @@ body {
     position:relative;
     font-size: 32px;
     font-weight: 700;
-    color: rgb(10, 189, 55);
+    color: white;
 }
 
 .home-content h3::before {
