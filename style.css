@@ -1,433 +1,113 @@
-@import url();
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fixovaná hlavička</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-*{
+  * {
     margin: 0;
-    padding:0;
+    padding: 0;
     box-sizing: border-box;
-    font-family:"Poppins" sans-serif;
+    font-family: "Poppins", sans-serif;
+  }
 
-}
+  body {
+    color: rgb(255, 255, 255);
+    background-color: rgb(2, 32, 7);
+  }
 
-body {
-    /*background-color: rgb(2, 32, 7);*/
-    color:rgb(255, 255, 255);
-}
-
-
-.header {
+  .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     padding: 20px 10%;
-    background: transparent;
+    background: rgba(2, 32, 7, 0.85); /* lehká průhlednost pro lepší čitelnost */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100;
-}
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  }
 
-
-.logo{
-    position:relative;
+  .logo {
     font-size: 25px;
-    color:aliceblue;
+    color: aliceblue;
     text-decoration: none;
     font-weight: 600;
-}
+  }
 
-.logo::before {
-    content: "";
-    position:absolute;
-    top:0;
-    right:0;
-    width: 100%;
-    height:100%;
-    background:rgb(2, 32, 7);
-    animation:showRight 1s ease forwards;
-    animation-delay:4s;
-}
-
-.navbar a {
-    font-size:18px;
-    color:rgb(242, 255, 240);
+  .navbar a {
+    font-size: 18px;
+    color: rgb(242, 255, 240);
     text-decoration: none;
     font-weight: 500;
-    margin-left:35px;
-    transition: 3s;
-}
+    margin-left: 35px;
+    transition: color 0.3s ease;
+  }
 
-/* .navbar a:hover,
-.navbar a.active {
-    color:rgb(94, 255, 0);
-} */
+  .navbar a:hover {
+    color: rgb(94, 255, 0);
+  }
 
-.home {
+  /* Tady je to magický místo! - odsazení obsahu kvůli fixed hlavičce */
+  .home {
+    padding-top: 80px; /* Dostat místo na hlavičku, jinak se ti obsah schová pod ni! */
     height: 132vh;
-    background: url("img/bg3.jpg ") no-repeat;
-    background-size:cover;
-    background-position:center;
-    display: flex ;
+    background: url("img/bg3.jpg") no-repeat center center/cover;
+    display: flex;
     align-items: center;
-    padding:0 10%;
-}
+    padding-left: 10%;
+  }
 
-.home-content{
+  .home-content {
     max-width: 600px;
-}
+  }
 
-
-.home-content h1::before {
-    content: "";
-    position:absolute;
-    top:0;
-    right:0;
-    width: 100%;
-    height:100%;
-    background:rgb(2, 32, 7);
-    animation:showRight 1s ease forwards;
-    animation-delay:1s;
-}
-
-
-
-.home-content h1{
-    position: relative;
+  .home-content h1 {
     font-size: 50px;
     font-weight: 700;
     line-height: 1.2;
-}
+    color: white;
+  }
 
-.home-content h3 {
-    position:relative;
+  .home-content h3 {
     font-size: 32px;
     font-weight: 700;
     color: white;
-}
-
-.home-content h3::before {
-    content: "";
-    position:absolute;
-    top:0;
-    right:0;
-    width: 100%;
-    height:100%;
-    background:rgb(2, 32, 7);
-    animation:showRight 1s ease forwards;
-    animation-delay:1.3s;
-}
-
-
-.home-content p {
-    position:relatice;
-    font-size:16 px;
-    margin:20px 0 40px;
-}
-
-.home-content p::before {
-    content: "";
-    position:absolute;
-    top:0;
-    right:0;
-    width: 100%;
-    height:100%;
-    background:rgb(2, 32, 7);
-    animation:showRight 1s ease forwards;
-    animation-delay: 1.6;
-}
-
-
-
-.home-content .btn-box {
-    position:relative;
-    display:flex;
-    justify-content:space-between;
-    width: 345px;
-    height: 50px;
-}
-
-.home-content .btn-box::before {
-    content: "";
-    position:absolute;
-    top:0;
-    right:0;
-    width: 100%;
-    height:100%;
-    background:rgb(2, 32, 7);
-    animation:showRight 1s ease forwards;
-    animation-delay: 1.9;
-    z-index: 2;
-
-}
-
-
-.btn-box a {
-    position: relative;
-    display: inline-flex ;
-    justify-content:center;
-    align-items:center;
-    width:150px;
-    height:100%;
-    background:rgb(38, 206, 23);
-    border: 2px solid rgb(14, 233, 61);
-    border-radius:8px;
-    font-size:19px;
-    color:#0c2908;
-    text-decoration:none;
-    font-weight:600;
-    letter-spacing: 1px;
-    z-index: 1;
-    overflow: hidden;
-    transition: 5s;
-}
-
-
-
-.btn-box a:nth-child(2){
-    background: transparent;
-    color:rgb(252, 246, 246);
-
-
-}
-
-.btn-box a:nth-child(2):hover{
-    background:rgb(243, 239, 238);
-
-}
-
-.btn-box a:nth-child(2):before{
-    background:rgb(14, 233, 61);
-
-}
-
-
-.btn-box a::before {
-    content: "";
-    position:absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background: rgb(234, 236, 234);
-    z-index: -1;
-    transition: .5s;
-}
-
-.btn-box a:hover::before {
-    width:100%;
-
-}
-
-.home-sci {
-    margin: 11px;
-    width: 170px;
-    display:flex;
-    justify-content: space-between;
-    padding-left: 20px;
-
-}
-
-.home-sci::before {
-    content: "";
-    top:0;
-    right:0;
-    width: 100%;
-    height:100%;
-    background:rgb(2, 32, 7);
-    animation:showRight 1s ease forwards;
-    animation-delay: 2.5;
-    z-index: 2;
- 
-}
-
-
-.home-sci a {
- position: relative;   
- display: inline-flex;
- justify-content:center;
- align-items:center;
- width:40px;
- height:40px;
- background: transparent;
- border:2px solid rgb(14, 233, 61);
- border-radius: 50%;
- font-size: 20px;   
- color:rgb(14, 233, 61);
- text-decoration: none;
- z-index: 1 ;
- overflow: hidden;
- transition: .5s;
-}
-
-.home-sci a:hover {
-    color:#0b2908
-}
-
-.home-sci a::before {
-    content:"";
-    position: absolute;
-    top:0;
-    left:0;
-    width:0;
-    height:100%;
-    background: rgb(14, 233, 61);
-    z-index: -1;
-    transition: .5s;
-}
-
-.home-sci a:hover::before {
-    width:100%;
-}
-
-.home-imgHover {
-   position: absolute; 
-   top: 0;
-   right:30px;
-   width: 400px;
-   height: 100%;
-   background: transparent;
-   transition: 3s;
-   animation: manipActiveHover .1s forwards;
-   animation-delay: 4s;
-   pointer-events: none;
-}
-
-
-
-.home-imgHover:hover {
-background: rgb(2, 32, 7);
-opacity: .8;
-}
-.home-imgHover::after {
-    content: "";
-    position:absolute;
-    top:0;
-    right:0;
-    width: 120%;
-    height:100%;
-    background:rgb(2, 32, 7);
-    animation:showRight 1s ease forwards;
-    animation-delay: 3s;
-    z-index: 100;
-}
-
-/*KEYFRAMES ANIMATION*/
-
-@keyframes showRight {
-100% {
-    width: 0;
-}
-}
-
-@keyframes manipActiveHover {
-   100% {
-    pointer-events: auto; 
-   }
-}
-
-.container {
-    max-width: 400px;
-  }
-  .form-group {
-    margin-bottom: 15px;
-  }
-  #submitBtn {
-    background-color: rgb(10, 189, 55);
-    border-color: rgb(10, 189, 55);
   }
 
-  /* dovednosti */
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
+  .home-content p {
+    font-size: 16px;
+    margin: 20px 0 40px;
+    color: white;
+  }
 
-#experienceChart {
-    max-width: 100%;
-    margin: 20px auto;
-    display: block;
-}
+</style>
+</head>
+<body>
 
-/*seznam*/
+<header class="header">
+  <a href="#" class="logo">MůjLogo</a>
+  <nav class="navbar">
+    <a href="#">Domů</a>
+    <a href="#">O nás</a>
+    <a href="#">Služby</a>
+    <a href="#">Kontakt</a>
+  </nav>
+</header>
 
+<section class="home">
+  <div class="home-content">
+    <h1>Vítej v mém světe!</h1>
+    <h3>Tohle je tvoje fixovaná hlavička</h3>
+    <p>Tady začíná obsah stránky, který už NEBUDE schovaný pod hlavičkou, protože jsme mu dali pořádný padding-top!</p>
+  </div>
+</section>
 
+</body>
+</html>
 
-
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    color: #333;
-
-}
-
-li {
-    background-color: rgb(255, 255, 255);
-    padding: 5px;
-    margin: 5px;
-    border-radius: 3px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-}
-
-li i {
-    margin-right: 5px;
-
-}
-
-li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-}
-
-.empty-space {
-    margin-bottom: 100px;
-}
-
-
-footer {
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-}
-
-footer p {
-    margin: 0;
-    font-size: 14px;
-
-// responzivní
-
-@media screen and (max-width:  585px) {
-    .home-sci {
-        bottom:  50px;
-    }
-}
-
-@media only screen and (max-width: 500px) {
-    .header {
-        flex-direction: column;
-        align-items: center;
-        padding: 20px 5%;
-    }
-}
-
-
-
-
-
-    /*@media (max-width:  1000px) {*/
-    /*    .home-sci {*/
-    /*        position: absolute;*/
-    /*        top: 0;*/
-    /*        right:30px;*/
-    /*        width: 400px; !* Šířka zůstane 400px *!*/
-    /*        height: 100%;*/
-    /*        background: transparent;*/
-    /*        transition: none; !* Zrušení přechodu *!*/
-    /*        animation: none; !* Zrušení animace *!*/
-    /*        pointer-events: none; !* Vypnutí pointer events *!        }*/
-    /*}*/
