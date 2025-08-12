@@ -1,156 +1,316 @@
-<!DOCTYPE html>
-<html lang="cs">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Tommy Pietro - Header s hamburgerem</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-  * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
-  }
+}
 
-  body {
-    background-color: rgb(2, 32, 7);
+body {
+    /*background-color: rgb(2, 32, 7);*/
     color: rgb(255, 255, 255);
-  }
+}
 
-  .header {
+.header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     padding: 20px 10%;
-    background-color: rgb(2, 32, 7);
+    background-color: rgb(2, 32, 7); /* pevný pozadí bez průhlednosti */
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-  }
+}
 
-  .logo {
+.logo {
+    position: relative;
     font-size: 25px;
     color: aliceblue;
     text-decoration: none;
     font-weight: 600;
-  }
+}
 
-  .navbar {
-    display: flex;
-    align-items: center;
-  }
+/* Zrušíme animaci co překrývala logo */
+.logo::before {
+    display: none;
+}
 
-  .navbar a {
+.navbar a {
     font-size: 18px;
     color: rgb(242, 255, 240);
     text-decoration: none;
     font-weight: 500;
     margin-left: 35px;
     transition: color 0.3s ease;
-  }
+}
 
-  .navbar a:hover,
-  .navbar a.active {
+.navbar a:hover,
+.navbar a.active {
     color: rgb(94, 255, 0);
-  }
+}
 
-  /* Hamburger button - skrytý na desktopu */
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    width: 30px;
-    height: 25px;
-    justify-content: space-between;
-  }
-
-  .hamburger div {
-    height: 4px;
-    background-color: rgb(94, 255, 0);
-    border-radius: 2px;
-    transition: 0.3s;
-  }
-
-  /* Responzivní design pro menší obrazovky */
-  @media (max-width: 768px) {
-    .navbar {
-      position: fixed;
-      top: 70px;
-      left: 0;
-      width: 100%;
-      background-color: rgb(2, 32, 7);
-      flex-direction: column;
-      padding: 20px 10%;
-      display: none; /* skryté defaultně */
-      z-index: 99;
-    }
-
-    .navbar a {
-      margin: 10px 0;
-      font-size: 20px;
-      margin-left: 0;
-    }
-
-    .hamburger {
-      display: flex;
-    }
-  }
-
-  /* Aktivní stav menu - viditelné */
-  .navbar.active {
+.home {
+    height: 132vh;
+    background: url("img/bg3.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
     display: flex;
-  }
+    align-items: center;
+    padding: 0 10%;
+}
 
-  /* Hamburger animace na křížek */
-  .hamburger.active div:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
+.home-content {
+    max-width: 600px;
+}
 
-  .hamburger.active div:nth-child(2) {
-    opacity: 0;
-  }
+.home-content h1 {
+    position: relative;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.2;
+}
 
-  .hamburger.active div:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
-  }
+.home-content h3 {
+    position: relative;
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+}
 
-  /* --- Zbytek tvých stylů můžeš přidat sem --- */
-  /* třeba tvůj .home, .btn-box, footer, atd. */
+.home-content p {
+    position: relative;
+    font-size: 16px;
+    margin: 20px 0 40px;
+}
 
-</style>
-</head>
-<body>
+.home-content .btn-box {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 345px;
+    height: 50px;
+}
 
-<header class="header">
-  <a href="#" class="logo">Tommy Pietro</a>
+.btn-box a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    background: rgb(38, 206, 23);
+    border: 2px solid rgb(14, 233, 61);
+    border-radius: 8px;
+    font-size: 19px;
+    color: #0c2908;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    overflow: hidden;
+    transition: 0.5s;
+    z-index: 1;
+}
 
-  <div class="hamburger" id="hamburger">
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
+.btn-box a:nth-child(2) {
+    background: transparent;
+    color: rgb(252, 246, 246);
+}
 
-  <nav class="navbar" id="navbar">
-    <a href="#" class="active">Home</a>
-    <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="#">Contact</a>
-  </nav>
-</header>
+.btn-box a:nth-child(2):hover {
+    background: rgb(243, 239, 238);
+    color: #0c2908;
+}
 
-<script>
-  const hamburger = document.getElementById('hamburger');
-  const navbar = document.getElementById('navbar');
+.btn-box a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgb(234, 236, 234);
+    z-index: -1;
+    transition: 0.5s;
+}
 
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navbar.classList.toggle('active');
-  });
-</script>
+.btn-box a:hover::before {
+    width: 100%;
+}
 
-</body>
-</html>
+.home-sci {
+    margin: 11px;
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+}
+
+.home-sci a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid rgb(14, 233, 61);
+    border-radius: 50%;
+    font-size: 20px;
+    color: rgb(14, 233, 61);
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.5s;
+    z-index: 1;
+}
+
+.home-sci a:hover {
+    color: #0b2908;
+}
+
+.home-sci a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgb(14, 233, 61);
+    z-index: -1;
+    transition: 0.5s;
+}
+
+.home-sci a:hover::before {
+    width: 100%;
+}
+
+.home-imgHover {
+    position: absolute;
+    top: 0;
+    right: 30px;
+    width: 400px;
+    height: 100%;
+    background: transparent;
+    transition: 3s;
+    animation: manipActiveHover 0.1s forwards;
+    animation-delay: 4s;
+    pointer-events: none;
+}
+
+.home-imgHover:hover {
+    background: rgb(2, 32, 7);
+    opacity: 0.8;
+}
+
+.home-imgHover::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 120%;
+    height: 100%;
+    background: rgb(2, 32, 7);
+    animation: showRight 1s ease forwards;
+    animation-delay: 3s;
+    z-index: 100;
+}
+
+@keyframes showRight {
+    100% {
+        width: 0;
+    }
+}
+
+@keyframes manipActiveHover {
+    100% {
+        pointer-events: auto;
+    }
+}
+
+.container {
+    max-width: 400px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+#submitBtn {
+    background-color: rgb(10, 189, 55);
+    border-color: rgb(10, 189, 55);
+}
+
+/* dovednosti */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#experienceChart {
+    max-width: 100%;
+    margin: 20px auto;
+    display: block;
+}
+
+/* seznam */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    color: #333;
+}
+
+li {
+    background-color: rgb(255, 255, 255);
+    padding: 5px;
+    margin: 5px;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+li i {
+    margin-right: 5px;
+}
+
+li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.empty-space {
+    margin-bottom: 100px;
+}
+
+footer {
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* responzivní */
+@media screen and (max-width: 585px) {
+    .home-sci {
+        bottom: 50px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 5%;
+    }
+}
+
