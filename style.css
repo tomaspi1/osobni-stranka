@@ -323,5 +323,9 @@ footer p {
     }
     .home-imgHover::after {
         animation: none !important;
+        width: 0 !important;
+        background: transparent !important;
     }
 }
+
+
