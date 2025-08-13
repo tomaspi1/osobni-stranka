@@ -29,6 +29,12 @@ document.querySelectorAll('.navbar a').forEach(link=>{
         <a href="portfolio.html">Portfolio</a>
 
     </nav>
+ <script>
+document.querySelectorAll('.navbar a').forEach(link=>{
+  if(link.href===window.location.href){link.classList.add('active')}
+});
+</script>
+ 
 </header>
 <section class="home">
 <div class="home-content">
