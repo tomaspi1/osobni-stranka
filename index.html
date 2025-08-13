@@ -25,9 +25,13 @@
         <a href="portfolio.html">Portfolio</a>
 
     </nav>
- <script>
-document.querySelectorAll('.navbar a').forEach(link=>{
-  if(link.href===window.location.href){link.classList.add('active')}
+<script>
+document.querySelectorAll('.navbar a').forEach(link => {
+  if(link.pathname === window.location.pathname){
+    link.classList.add('active');
+  } else {
+    link.classList.remove('active');
+  }
 });
 </script>
  
