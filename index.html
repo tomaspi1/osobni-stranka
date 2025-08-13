@@ -9,6 +9,12 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
  </head>
+  <script>
+document.querySelectorAll('.navbar a').forEach(link=>{
+  if(link.href===window.location.href){link.classList.add('active')}
+});
+</script>
+  
  <body>
     
 <header class="header">
