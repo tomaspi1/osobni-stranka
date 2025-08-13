@@ -22,17 +22,16 @@
    </nav>
 
    <script>
-   document.querySelectorAll('.navbar a').forEach(link => {
-      // získáme jen jméno souboru
-      const linkFile = link.getAttribute('href').split('/').pop();
-      const currentFile = window.location.pathname.split('/').pop();
-      
-      if(linkFile === currentFile){
-         link.classList.add('active');
-      } else {
-         link.classList.remove('active');
-      }
-   });
+document.querySelectorAll('.navbar a').forEach(link => {
+  const linkFile = link.getAttribute('href').split('/').pop();
+  let currentFile = window.location.pathname.split('/').pop();
+  if(currentFile === "") currentFile = "index.html";
+  if(linkFile === currentFile){
+    link.classList.add('active');
+  } else {
+    link.classList.remove('active');
+  }
+});
    </script>
 
 </header>
