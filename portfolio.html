@@ -25,9 +25,15 @@
 
    </nav>
 
-   <script>
-document.querySelectorAll('.navbar a').forEach(link=>{
-  if(link.href===window.location.href){link.classList.add('active')}
+ <script>
+document.querySelectorAll('.navbar a').forEach(link => {
+  const linkFile = link.getAttribute('href').split('/').pop();  // jen název souboru
+  const currentFile = window.location.pathname.split('/').pop(); // aktuální stránka
+  if(linkFile === currentFile){
+    link.classList.add('active');
+  } else {
+    link.classList.remove('active');
+  }
 });
 </script>
    
