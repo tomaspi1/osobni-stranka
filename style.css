@@ -314,3 +314,14 @@ footer p {
     }
 }
 
+@media (max-width: 768px) {
+    .home-imgHover {
+        animation: none !important;
+        animation-delay: 0s !important;
+        background: transparent !important;
+        pointer-events: none !important;
+    }
+    .home-imgHover::after {
+        animation: none !important;
+    }
+}
