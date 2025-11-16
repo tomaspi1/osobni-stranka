@@ -27,12 +27,10 @@
          width: 100% !important;
          height: 100% !important;
       }
-
       /* Skrytí grafu na mobilech */
       @media (max-width: 768px) {
          .chart-card { display: none; }
       }
-
       /* Odstranění pozadí canvasu */
       canvas { background: none !important; }
    </style>
@@ -52,7 +50,7 @@
 <section class="home">
    <div class="home-content">
       <h1>Dovednosti</h1>
-      <p>Jsem začátečník v oblasti web developmentu a právě začínám svou kariérní cestu v IT. Mám základní znalosti v JavaScriptu, NETTE, SQL, HTML/CSS, GIT, REACTU a něco málo v dalších oblastech.</p>
+      <p>Jsem začátečník v oblasti web developmentu a právě začínám svou kariérní cestu v IT. Mám základní znalosti v JavaScriptu, NETTE, SQL, HTML/CSS, GIT, REACTU, <strong>WordPressu</strong> a něco málo v dalších oblastech.</p>
    </div>
 
    <!-- Graf -->
@@ -88,10 +86,11 @@
    });
 </script>
 
-<!-- === GRAF (Chart.js) === -->
+<!-- === GRAF (Chart.js) – PŘIDÁNO: WordPress (7) === -->
 <script>
-   const skillLabels = ['JavaScript', 'React', 'HTML/CSS', 'NETTE', 'GIT'];
-   const skillData = [4, 3, 4, 2, 2];
+   const skillLabels = ['JavaScript', 'React', 'HTML/CSS', 'NETTE', 'GIT', 'WordPress'];
+   const skillData = [4, 3, 4, 2, 2, 7];  // ← WordPress = 7
+
    const ctx = document.getElementById('skillsChart').getContext('2d');
    const skillsChart = new Chart(ctx, {
       type: 'radar',
@@ -119,7 +118,7 @@
                ticks: { stepSize: 1, backdropColor: 'transparent' },
                angleLines: { color: 'rgba(255,255,255,0.06)' },
                grid: { color: 'rgba(255,255,255,0.04)' },
-               pointLabels: { color: '#cfe8ff' }
+               pointLabels: { color: '#cfe8ff', font: { size: 12 } }
             }
          },
          plugins: {
