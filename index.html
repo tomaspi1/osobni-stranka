@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,34 +8,26 @@
    <link rel="stylesheet" href="style.css">
    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-
 <body>
-
 <header class="header">
-
    <a href="index.html" class="logo">Tomáš.</a>
-
    <nav class="navbar">
-       <a href="index.html">Úvod</a>
+       <a href="index.html" class="active">Úvod</a>
        <a href="dovednosti.html">Dovednosti</a>
        <a href="portfolio.html">Portfolio</a>
    </nav>
-
-
-
 </header>
 
 <section class="home">
    <div class="home-content">
       <h3>Ahoj, já jsem Tomáš - Full Stack Developer - Junior </h3>
-      <p> S Full Stack vývojem jsem začal před více než dvěmi lety, kdy jsem objevil svou vášeň pro tvorbu webových stránek. Od té doby jsem se  zdokonaloval a zkoušel různé programovací jazyky. Zaměřuji se na webové stránky. Nyní moje pozornost směřuje na PHP- Wordpress, CSS,HTML, protože mě to nejvíce baví a samozřejmě nezapomínám na nástroje okolo.</p>
-      
+      <p> S Full Stack vývojem jsem začal před více než dvěmi lety, kdy jsem objevil svou vášeň pro tvorbu webových stránek. Od té doby jsem se zdokonaloval a zkoušel různé programovací jazyky. Zaměřuji se na webové stránky. Nyní moje pozornost směřuje na PHP- Wordpress, CSS,HTML, protože mě to nejvíce baví a samozřejmě nezapomínám na nástroje okolo.</p>
+     
       <div class="btn-box">
          <a href="kontakt.html">Napsat mi</a>
          <a href="https://github.com/tomaspi1?tab=repositories">Git Hub</a>
       </div>
    </div>
-
    <span class="home-imgHover"></span>
 </section>
 
@@ -45,8 +37,21 @@
        <a href="https://github.com/tomaspi1?tab=repositories"><i class='bx bxl-github'></i></a>
        <a href="mailto:pit.tom@seznam.cz"><i class='bx bx-envelope'></i></a>
    </div>
-   <p>&copy; 2024 Web vytvořil Tomáš Pitro</p>
+   <p>© 2024 Web vytvořil Tomáš Pitro</p>
 </footer>
+
+<!-- Automatické zvýraznění aktivní položky menu -->
+<script>
+    // Získá název aktuální stránky (např. index.html, dovednosti.html)
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+
+    // Přidá třídu 'active' k odkazu, který vede na aktuální stránku
+    document.querySelectorAll('.navbar a').forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
+        }
+    });
+</script>
 
 </body>
 </html>
