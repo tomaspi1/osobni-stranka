@@ -35,9 +35,8 @@
       body{background:#0f1724;color:#e6eef8;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;}
       header.header{display:flex;justify-content:space-between;align-items:center;padding:18px 24px;background:transparent}
       .logo{font-weight:700;color:#fff;text-decoration:none}
-      .navbar a{color:#bcd0ff;margin-left:12px;text-decoration:none}
-      /* odstraněné podtržení u aktivního menu */
-      .navbar a.active{padding-bottom:2px;}
+      .navbar a{color:#fff;}
+      .navbar a.active{border-bottom:2px solid #7dd3fc;padding-bottom:2px}
 
    </style>
 </head>
@@ -47,10 +46,13 @@
 
    <a href="index.html" class="logo">Tomáš. </a>
 
+
    <nav class="navbar">
+
     <a href="index.html" class="active">Úvod</a>
     <a href="dovednosti.html">Dovednosti</a>
     <a href="portfolio.html">Portfolio</a>
+
    </nav>
    
 <script>
@@ -70,18 +72,22 @@ document.querySelectorAll('.navbar a').forEach(link => {
 <div class="home-content">
 
    <h1>Dovednosti</h1>
-   <p>Jsem začátečník v oblasti web developmentu a právě začínám svou kariérní cestu v IT. Mám základní znalosti v JavaScriptu, NETTE, SQL, HTML/CSS, GIT, REACTU a něco málo v dalších oblastech.</p>
+   <p>Jsem začátečník v oblasti web developmentu a právě začínám svou kariérní cestu v IT. Mám základní znalosti v JavaScriptu, PHP(NETTE), SQL, HTML/CSS, GIT, TypeScriptu, REACTU a něco málo v dalších oblastech.</p>
 
 </div>
 
 <!-- ZDE JE PŘIDANÝ RESPONSIVNÍ GRAF -->
 <div class="chart-card" aria-label="Graf dovedností Tomáše Pitra">
+  <h2 style="margin:6px 0 12px 0">Moje dovednosti — přibližné parametry</h2>
   <div class="chart-container">
     <canvas id="skillsChart" role="img" aria-label="Radarový graf ukazující úroveň dovedností"></canvas>
   </div>
+  <p style="margin-top:10px;font-size:0.9rem;opacity:0.85">Úprava hodnot: otevři tento soubor a změň pole <code>skillData</code> v &lt;script&gt; bloku.</p>
 </div>
 
 </section>
+
+
 
 <footer>
    <div class="home-sci">
@@ -92,11 +98,11 @@ document.querySelectorAll('.navbar a').forEach(link => {
    <p>&copy; 2024 Web vytvořil Tomáš Pitro</p>
 </footer>
 
+
 <script>
 // --- Data: uprav hodnoty podle potřeby (škála 0-10) ---
-// TypeScript jsem odstranil z listu i dat
-const skillLabels = ['JavaScript','React','HTML/CSS','SQL','NETTE','GIT','UX/UI'];
-const skillData = [6,5,7,3,3,6,4];
+const skillLabels = ['JavaScript','React','HTML/CSS','NETTE'];
+const skillData = [4,3,4,2];
 
 // Vytvoříme gradient pro hezčí vzhled (pokud podporuje renderér)
 function getGradient(ctx, area){
@@ -149,9 +155,11 @@ const skillsChart = new Chart(ctx, {
     }
   }
 });
+
 </script>
 
 </body>
 </html>
+
 
 
