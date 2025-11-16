@@ -1,7 +1,7 @@
 const projects = [
-  { name: "  Domácí bylinky (Wordpress, DIVI)", link: "https://magickeweby.cz", icon: "leaf" },        
+  { name: "  Magické weby (Wordpress, DIVI, PHP)", link: "https://magickeweby.cz", icon: "leaf" },        
  // { name: "E-shop- Bylinky (Woocommerce, Elementor)", link: "https://woocommerce-tomaspitro-cz.webkitty.online/", icon: "shopping-cart" }, 
-  { name: "Blog - Starý Egypt (REACT)", link: "https://staryegypt.vercel.app/", icon: "eye" },                    
+  { name: "Blog - Starý Egypt (JAVASCRIPT, REACT)", link: "https://staryegypt.vercel.app/", icon: "eye" },                    
  //{ name: "E-shop - 3D tisk( Wordpress - testovací verze)", link: "https://projekt-wp1.vercel.app/", icon: "wrench" },
   { name: "Další projekty a všechny repozitáře", link: "https://github.com/tomaspi1?tab=repositories", icon: "code" }  // repozitáře = kód
 ];
