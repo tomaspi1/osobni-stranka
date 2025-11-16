@@ -18,7 +18,7 @@ body {
     left: 0;
     width: 100%;
     padding: 20px 10%;
-    background-color: rgb(2, 32, 7); /* pevný pozadí bez průhlednosti */
+    background-color: rgb(2, 32, 7);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -33,7 +33,6 @@ body {
     font-weight: 600;
 }
 
-/* Zrušíme animaci co překrývala logo */
 .logo::before {
     display: none;
 }
@@ -186,48 +185,16 @@ body {
     width: 100%;
 }
 
-.home-imgHover {
-    position: absolute;
-    top: 0;
-    right: 30px;
-    width: 400px;
-    height: 100%;
-    background: transparent;
-    transition: 3s;
-    animation: manipActiveHover 0.1s forwards;
-    animation-delay: 4s;
-    pointer-events: none;
-}
-
+/* --- EFEKTY OBRAZKU VYPNUTY --- */
+.home-imgHover,
+.home-imgHover::after,
 .home-imgHover:hover {
-    background: rgb(2, 32, 7);
-    opacity: 0.8;
+    display: none !important;
 }
 
-.home-imgHover::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 120%;
-    height: 100%;
-    background: rgb(2, 32, 7);
-    animation: showRight 1s ease forwards;
-    animation-delay: 3s;
-    z-index: 100;
-}
-
-@keyframes showRight {
-    100% {
-        width: 0;
-    }
-}
-
-@keyframes manipActiveHover {
-    100% {
-        pointer-events: auto;
-    }
-}
+/* Animace odstraněny */
+@keyframes showRight { }
+@keyframes manipActiveHover { }
 
 .container {
     max-width: 400px;
@@ -314,17 +281,7 @@ footer p {
     }
 }
 
+/* Na mobilech už není potřeba nic skrývat, protože je to vypnuté globálně */
 @media (max-width: 768px) {
-    .home-imgHover {
-        animation: none !important;
-        animation-delay: 0s !important;
-        background: transparent !important;
-        pointer-events: none !important;
-    }
-
-    .home-imgHover::after {
-        animation: none !important;
-        width: 0 !important;
-        background: transparent !important;
-    }
+    /* Ponecháno prázdné – efekt je vypnutý všude */
 }
