@@ -21,18 +21,7 @@
        <a href="portfolio.html">Portfolio</a>
    </nav>
 
-   <script>
-document.querySelectorAll('.navbar a').forEach(link => {
-  const linkFile = link.getAttribute('href').split('/').pop();
-  let currentFile = window.location.pathname.split('/').pop();
-  if(currentFile === "") currentFile = "index.html";
-  if(linkFile === currentFile){
-    link.classList.add('active');
-  } else {
-    link.classList.remove('active');
-  }
-});
-   </script>
+
 
 </header>
 
